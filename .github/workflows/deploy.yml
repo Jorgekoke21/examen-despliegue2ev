@@ -36,5 +36,6 @@ jobs:
           APP_DIST_DIR=$(ls -d dist/* | head -n 1)
           rsync -az --delete \
             -e "ssh -p ${{ secrets.VPS_PORT }}" \
-            "$APP_DIST_DIR"/ \
+            "$APP_DIST_DIR/browser/" \
             ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/html/examen/
+
